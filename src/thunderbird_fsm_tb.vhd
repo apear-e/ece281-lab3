@@ -110,7 +110,9 @@ begin
 	   assert w_lights_L = "000" AND w_lights_R = "000" report "bad reset" severity failure;
 	w_reset <= '0';
 	
-	--test no lights on with no input (they are initialized to zero already so I didn't assign them)
+	--test no lights on with no input
+	w_left <= '0';
+	w_right <= '0';
 	wait for k_clk_period;
 	   assert w_lights_L = "000" report "state OFF no input" severity failure;
 	   assert w_lights_R = "000" report "state OFF no input" severity failure;
